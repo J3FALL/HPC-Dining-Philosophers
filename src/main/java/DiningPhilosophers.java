@@ -17,11 +17,10 @@ public class DiningPhilosophers {
             Object rightFork = forks.get((index + 1) % forks.size());
 
             if (index == PHILOSOPHERS_AMOUNT - 1) {
-                philosophers.add(new Philosopher(philosophersNames.get(index), rightFork, leftFork));
+                philosophers.add(new Philosopher(philosophersNames.get(index), rightFork, leftFork, System.nanoTime()));
             } else {
-                philosophers.add(new Philosopher(philosophersNames.get(index), leftFork, rightFork));
+                philosophers.add(new Philosopher(philosophersNames.get(index), leftFork, rightFork, System.nanoTime()));
             }
-
             Thread t = new Thread(philosophers.get(index), "Philosopher " + (index + 1));
             t.start();
         }

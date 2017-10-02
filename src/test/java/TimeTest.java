@@ -16,6 +16,5 @@ public class TimeTest {
         assertThat(Integer.valueOf((int) (secondMoment - firstMoment / 1000)))
                 .isInstanceOf(Integer.class);
 
-        System.out.println();
     }
 }
